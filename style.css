@@ -16,7 +16,7 @@ h1 {
   height: 50px;
   width: 250px;
   position: absolute;
-  margin-bottom: 37%;
+  margin-bottom: 725px;
   text-align: center;
   border-radius: 20px;
   border: 2px solid rgb(221, 221, 221);
@@ -32,6 +32,7 @@ h1 {
 }
 
 #sidebar {
+  margin-top: -20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border-right: 2px solid gray;
@@ -46,4 +47,45 @@ h1 {
 
 #mylists {
   margin-left: 10px;
+}
+
+#modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid gray;
+  margin-top: 12%;
+  margin-left: 26%;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background-color: white;
+  display: none;
+}
+
+#submitbtn {
+  width: 80px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+input[type="text"] {
+  margin: 10px;
+}
+
+#listscontainer {
+  position: absolute;
+  margin: 0;
+  margin-left: 225px;
+  border-top-right-radius: 20px;
+  width: 975px;
+}
+
+.lists {
+  margin-left: 3px;
+  height: 30px;
+  border-bottom: 2px solid gray;
 }
