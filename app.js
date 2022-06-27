@@ -1,4 +1,4 @@
-let lists = [];
+let listsArray = [];
 const newList = document.getElementById("newlist");
 modal = document.getElementById("modal");
 submit = document.getElementById("submitbtn");
@@ -20,14 +20,32 @@ newList.addEventListener("click", function () {
 });
 
 function displayToDos() {
-  for (let i = 0; i < lists.length; i++) {
-    const newToDoDisplay = document.createElement("div");
-    newToDoDisplay.classList.add(".lists");
-    document.querySelector(".lists").appendChild(newToDoDisplay);
-    newTitleDisplay = document.createElement("h2");
+  for (let i = 0; i < listsArray.length; i++) {
+    const list = document.createElement("div");
+    list.classList.add("lists");
+    document.getElementById("listscontainer").appendChild(list);
+    const newTitleDisplay = document.createElement("h2");
+    newTitleDisplay.classList.add("titledisplay");
     newTitleDisplay.innerHTML = document.getElementById("title").value;
-    newToDoDisplay.appendChild(newTitleDisplay);
+    const newDescriptionDisplay = document.createElement("h3");
+    newDescriptionDisplay.classList.add("descriptiondisplay");
+    newDescriptionDisplay.innerHTML =
+      document.getElementById("description").value;
+    const newDueDateDisplay = document.createElement("h3");
+    newDueDateDisplay.classList.add("duedatedisplay");
+    newDueDateDisplay.innerHTML = document.getElementById("duedate").value;
+    const newPriorityDisplay = document.createElement("h3");
+    newPriorityDisplay.classList.add("duedatedisplay");
+    newPriorityDisplay.innerHTML = document.getElementById("priority").value;
+    list.appendChild(newTitleDisplay);
+    list.appendChild(newDescriptionDisplay);
+    list.appendChild(newDueDateDisplay);
+    list.appendChild(newPriorityDisplay);
   }
+}
+
+function clearToDoDisplay() {
+  document.getElementById("listscontainer").replaceChildren();
 }
 
 submit.addEventListener("click", function getToDo(event) {
@@ -38,6 +56,8 @@ submit.addEventListener("click", function getToDo(event) {
     (this.dueDate = document.getElementById("duedate").value),
     (this.priority = document.getElementById("priority").value)
   );
-  lists.push(newToDo);
-  displayToDos(lists);
+  listsArray.push(newToDo);
+  clearToDoDisplay();
+  displayToDos(listsArray);
+  modal.style.display = "none";
 });
