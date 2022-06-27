@@ -85,7 +85,18 @@ input[type="text"] {
 }
 
 .lists {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin-left: 3px;
   height: 30px;
   border-bottom: 2px solid gray;
+}
+
+.titledisplay {
+  margin: 10px;
+}
+
+.descriptiondisplay {
+  margin: 10px;
 }
