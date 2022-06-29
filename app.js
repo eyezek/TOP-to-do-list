@@ -26,17 +26,16 @@ function displayToDos() {
     document.getElementById("listscontainer").appendChild(list);
     const newTitleDisplay = document.createElement("h2");
     newTitleDisplay.classList.add("titledisplay");
-    newTitleDisplay.innerHTML = document.getElementById("title").value;
+    newTitleDisplay.innerHTML = listsArray[i].title;
     const newDescriptionDisplay = document.createElement("h3");
     newDescriptionDisplay.classList.add("descriptiondisplay");
-    newDescriptionDisplay.innerHTML =
-      document.getElementById("description").value;
+    newDescriptionDisplay.innerHTML = listsArray[i].description;
     const newDueDateDisplay = document.createElement("h3");
     newDueDateDisplay.classList.add("duedatedisplay");
-    newDueDateDisplay.innerHTML = document.getElementById("duedate").value;
+    newDueDateDisplay.innerHTML = listsArray[i].dueDate;
     const newPriorityDisplay = document.createElement("h3");
     newPriorityDisplay.classList.add("duedatedisplay");
-    newPriorityDisplay.innerHTML = document.getElementById("priority").value;
+    newPriorityDisplay.innerHTML = listsArray[i].priority;
     list.appendChild(newTitleDisplay);
     list.appendChild(newDescriptionDisplay);
     list.appendChild(newDueDateDisplay);
