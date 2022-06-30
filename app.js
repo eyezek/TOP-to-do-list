@@ -23,7 +23,7 @@ function displayToDos() {
   for (let i = 0; i < listsArray.length; i++) {
     const list = document.createElement("div");
     list.classList.add("lists");
-    document.getElementById("listscontainer").appendChild(list);
+    document.getElementById("lists").appendChild(list);
     const newTitleDisplay = document.createElement("h2");
     newTitleDisplay.classList.add("titledisplay");
     newTitleDisplay.innerHTML = listsArray[i].title;
@@ -34,7 +34,7 @@ function displayToDos() {
     newDueDateDisplay.classList.add("duedatedisplay");
     newDueDateDisplay.innerHTML = listsArray[i].dueDate;
     const newPriorityDisplay = document.createElement("h3");
-    newPriorityDisplay.classList.add("duedatedisplay");
+    newPriorityDisplay.classList.add("prioritydisplay");
     newPriorityDisplay.innerHTML = listsArray[i].priority;
     list.appendChild(newTitleDisplay);
     list.appendChild(newDescriptionDisplay);
@@ -44,7 +44,7 @@ function displayToDos() {
 }
 
 function clearToDoDisplay() {
-  document.getElementById("listscontainer").replaceChildren();
+  document.getElementById("lists").replaceChildren();
 }
 
 submit.addEventListener("click", function getToDo(event) {
