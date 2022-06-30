@@ -12,14 +12,14 @@ body {
 
 h1 {
   background-color: black;
-  color: rgb(221, 221, 221);
+  color: white;
   height: 50px;
   width: 250px;
   position: absolute;
   margin-bottom: 725px;
   text-align: center;
   border-radius: 20px;
-  border: 2px solid rgb(221, 221, 221);
+  border: 2px solid white;
 }
 
 #container {
@@ -41,8 +41,13 @@ h1 {
 }
 
 #mytdl {
+  height: 30px;
+  color: white;
+  text-align: center;
+  background-color: black;
   border-bottom: 2px solid gray;
-  margin-left: 5px;
+  border-right: 2px solid gray;
+  border-top-left-radius: 17.5px;
 }
 
 #mylists {
@@ -99,4 +104,15 @@ input[type="text"] {
 
 .descriptiondisplay {
   margin: 10px;
+}
+
+#overheads {
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30px;
+  border-bottom: 2px solid gray;
+  border-top-right-radius: 17.5px;
 }
