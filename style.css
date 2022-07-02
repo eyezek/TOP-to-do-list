@@ -89,24 +89,17 @@ input[type="text"] {
   width: 975px;
 }
 
-.lists {
+.lists:not(.deletecontainer) {
+  text-align: center;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-left: 3px;
   height: 30px;
   border-bottom: 2px solid gray;
 }
 
-.titledisplay {
-  margin: 10px;
-}
-
-.descriptiondisplay {
-  margin: 10px;
-}
-
 #overheads {
+  text-align: center;
   color: white;
   background-color: black;
   display: flex;
@@ -115,4 +108,18 @@ input[type="text"] {
   height: 30px;
   border-bottom: 2px solid gray;
   border-top-right-radius: 17.5px;
+}
+
+.deletecontainer {
+  visibility: hidden;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 975px;
+  position: absolute;
+  height: 30px;
+  text-align: center;
 }
