@@ -24,6 +24,11 @@ function displayToDos() {
     const list = document.createElement("div");
     list.classList.add("lists");
     document.getElementById("lists").appendChild(list);
+    const deleteContainer = document.createElement("div");
+    deleteContainer.classList.add("deletecontainer");
+    const deleteButton = document.createElement("h2");
+    deleteButton.innerHTML = "Delete";
+    deleteButton.classList.add("deletebutton");
     const newTitleDisplay = document.createElement("h2");
     newTitleDisplay.classList.add("titledisplay");
     newTitleDisplay.innerHTML = listsArray[i].title;
@@ -40,6 +45,18 @@ function displayToDos() {
     list.appendChild(newDescriptionDisplay);
     list.appendChild(newDueDateDisplay);
     list.appendChild(newPriorityDisplay);
+    list.appendChild(deleteContainer);
+    deleteContainer.appendChild(deleteButton);
+  }
+}
+
+deleteContainer = document.getElementsByClassName("deletecontainer");
+
+function showToDoDelete() {
+  for (let i = 0; i > deleteContainer.length; i++) {
+    deleteContainer[i].addEventListener("mouseover", function () {
+      deleteContainer.style.visibility = "visible";
+    });
   }
 }
 
@@ -59,4 +76,5 @@ submit.addEventListener("click", function getToDo(event) {
   clearToDoDisplay();
   displayToDos(listsArray);
   modal.style.display = "none";
+  showToDoDelete();
 });
