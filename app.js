@@ -27,7 +27,7 @@ function displayToDos() {
     const deleteContainer = document.createElement("div");
     deleteContainer.classList.add("deletecontainer");
     const deleteButton = document.createElement("h2");
-    deleteButton.innerHTML = "Delete";
+    deleteButton.innerHTML = "delete to-do";
     deleteButton.classList.add("deletebutton");
     const newTitleDisplay = document.createElement("h2");
     newTitleDisplay.classList.add("titledisplay");
@@ -52,10 +52,23 @@ function displayToDos() {
 
 deleteContainer = document.getElementsByClassName("deletecontainer");
 
+lists = document.getElementsByClassName("lists");
+
 function showToDoDelete() {
-  for (let i = 0; i > deleteContainer.length; i++) {
-    deleteContainer[i].addEventListener("mouseover", function () {
-      deleteContainer.style.visibility = "visible";
+  for (let i = 0; i < lists.length; i++) {
+    lists[i].addEventListener("mouseover", function () {
+      deleteContainer[i].style.visibility = "visible";
+    });
+    lists[i].addEventListener("mouseout", function () {
+      deleteContainer[i].style.visibility = "hidden";
+    });
+  }
+}
+
+function deleteToDo(event) {
+  for (let i = 0; i > deleteButton.length; i++) {
+    deleteButton[i].addEventListener("click", function () {
+      event.target.innerHTML = "";
     });
   }
 }
