@@ -50,6 +50,8 @@ function displayToDos() {
   }
 }
 
+deleteButton = document.getElementsByClassName("deletebutton");
+
 deleteContainer = document.getElementsByClassName("deletecontainer");
 
 lists = document.getElementsByClassName("lists");
@@ -65,10 +67,12 @@ function showToDoDelete() {
   }
 }
 
-function deleteToDo(event) {
-  for (let i = 0; i > deleteButton.length; i++) {
+function deleteToDo() {
+  for (let i = 0; i < deleteButton.length; i++) {
     deleteButton[i].addEventListener("click", function () {
-      event.target.innerHTML = "";
+      lists[i].remove();
+      let index = listsArray.indexOf[i];
+      listsArray.splice(index, 1);
     });
   }
 }
@@ -89,5 +93,6 @@ submit.addEventListener("click", function getToDo(event) {
   clearToDoDisplay();
   displayToDos(listsArray);
   modal.style.display = "none";
+  deleteToDo();
   showToDoDelete();
 });
